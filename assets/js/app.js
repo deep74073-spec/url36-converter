@@ -9,7 +9,7 @@ const downloadLink = document.getElementById("downloadLink");
 
 // Leave empty when frontend and API use the same domain.
 // Set this to the Render API URL when the backend is deployed separately.
-const API_BASE = window.URL36_CONVERTER_API || "https://url36-converter-api.onrender.com";
+const API_BASE = window.URL36_CONVERTER_API || "";
 
 const allowedFormats = [
   "pdf", "doc", "docx", "txt", "rtf", "odt",

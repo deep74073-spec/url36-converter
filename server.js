@@ -40,12 +40,44 @@ const mimeTypes = {
 };
 
 app.disable("x-powered-by");
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      "script-src": [
+        "'self'",
+        "https://pagead2.googlesyndication.com",
+        "https://googleads.g.doubleclick.net"
+      ],
+      "frame-src": [
+        "'self'",
+        "https://googleads.g.doubleclick.net",
+        "https://tpc.googlesyndication.com"
+      ],
+      "img-src": ["'self'", "data:", "https:"],
+      "connect-src": [
+        "'self'",
+        "https://pagead2.googlesyndication.com"
+      ]
+    }
+  }
+}));
+
+// Serve only the public frontend files.
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.use("/assets", express.static(path.join(__dirname, "assets"), {
+  dotfiles: "ignore",
+  index: false
+}));
 
 const allowedOrigins = (process.env.FRONTEND_ORIGIN || "http://localhost:3000")
   .split(",")
   .map(origin => origin.trim())
-  .filter(Boolean);
+  .filter(Boolean)
+  .concat("https://converter.url36.com");
 
 app.use(cors({
   origin(origin, callback) {
