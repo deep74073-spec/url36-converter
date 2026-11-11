@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Convert documents between PDF, Word, Excel, PowerPoint, TXT, CSV and more with URL36 Document Converter.">
+  <title>Document Converter - Convert PDF, Word, Excel & More | URL36</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="URL36 home">URL<span>36</span></a>
+    <nav>
+      <a href="#converter">Converter</a>
+      <a href="#formats">Formats</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">URL36 · DOCUMENT TOOLS</span>
+      <h1>Convert documents.<br><span>Without the hassle.</span></h1>
+      <p>Convert files between PDF, Word, Excel, PowerPoint, text and other popular document formats — all in one place.</p>
+    </section>
+
+    <section class="converter" id="converter">
+      <div class="section-heading">
+        <h2>Document Converter</h2>
+        <p>Choose your file and the format you need.</p>
+      </div>
+
+      <div class="upload-area" id="dropArea">
+        <div class="upload-icon">↑</div>
+        <h3>Drop your document here</h3>
+        <p>or choose a file from your device</p>
+        <label class="file-button" for="fileInput">Choose Document</label>
+        <input type="file" id="fileInput" hidden
+          accept=".pdf,.doc,.docx,.txt,.rtf,.odt,.html,.htm,.xls,.xlsx,.csv,.ppt,.pptx,.odp">
+        <p class="file-info" id="fileInfo">PDF, DOCX, DOC, XLSX, XLS, CSV, PPTX, PPT, TXT, RTF, ODT, HTML</p>
+      </div>
+
+      <div class="conversion-options">
+        <div class="field">
+          <label for="sourceFormat">From format</label>
+          <select id="sourceFormat" disabled>
+            <option value="">Select a file first</option>
+          </select>
+        </div>
+        <div class="swap-icon">→</div>
+        <div class="field">
+          <label for="targetFormat">Convert to</label>
+          <select id="targetFormat">
+            <option value="pdf">PDF</option>
+            <option value="docx">Word (DOCX)</option>
+            <option value="txt">Text (TXT)</option>
+            <option value="rtf">Rich Text (RTF)</option>
+            <option value="odt">OpenDocument (ODT)</option>
+            <option value="html">HTML</option>
+            <option value="xlsx">Excel (XLSX)</option>
+            <option value="csv">CSV</option>
+            <option value="pptx">PowerPoint (PPTX)</option>
+            <option value="odp">OpenDocument Presentation (ODP)</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="convertButton" disabled>Convert Document</button>
+      <div class="status" id="status" role="status" aria-live="polite">
+        Select a document to get started.
+      </div>
+      <a id="downloadLink" class="download-link" hidden>Download converted document</a>
+    </section>
+
+    <section class="formats" id="formats">
+      <div class="section-heading">
+        <h2>Supported document formats</h2>
+        <p>Popular formats for everyday document work.</p>
+      </div>
+      <div class="format-grid">
+        <div class="format-card"><strong>PDF</strong><span>Portable documents</span></div>
+        <div class="format-card"><strong>DOC / DOCX</strong><span>Word documents</span></div>
+        <div class="format-card"><strong>XLS / XLSX</strong><span>Spreadsheets</span></div>
+        <div class="format-card"><strong>PPT / PPTX</strong><span>Presentations</span></div>
+        <div class="format-card"><strong>TXT / RTF</strong><span>Text documents</span></div>
+        <div class="format-card"><strong>CSV</strong><span>Tabular data</span></div>
+        <div class="format-card"><strong>ODT / ODP</strong><span>OpenDocument files</span></div>
+        <div class="format-card"><strong>HTML</strong><span>Web documents</span></div>
+      </div>
+    </section>
+
+    <section class="how" id="how-it-works">
+      <div class="section-heading">
+        <h2>How it works</h2>
+      </div>
+      <div class="steps">
+        <div><b>01</b><h3>Upload</h3><p>Choose a document from your device.</p></div>
+        <div><b>02</b><h3>Select format</h3><p>Choose the output format you need.</p></div>
+        <div><b>03</b><h3>Convert & download</h3><p>Convert your file and download the result.</p></div>
+      </div>
+    </section>
+
+    <section class="notice">
+      <h2>Your documents matter</h2>
+      <p>Conversion options and formatting quality depend on the file types involved. Avoid uploading passwords, confidential records or sensitive documents. Files sent to a server for conversion will be handled according to the site's privacy policy.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 URL36. All rights reserved.</p>
+    <div><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms</a></div>
+  </footer>
+
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
